@@ -7,24 +7,39 @@ export default function About() {
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
-             <div className="h-48 bg-blue-600 relative">
-                 <div className="absolute inset-0 bg-blue-500/20 [mask-image:radial-gradient(ellipse_at_top_right,white,transparent)]" />
-             </div>
+             <div className="h-48 sm:h-64 relative overflow-hidden">
+                    <Image
+                        src="/cover.jpg"
+                        alt="Physics With Zahid Cover"
+                        fill
+                        priority
+                        className="object-cover"
+                      />
+
+                          <div className="absolute inset-0 bg-black/20" />
+                  </div>
              
              <div className="px-8 pb-12">
                  <div className="flex flex-col sm:flex-row gap-8 items-start sm:items-end -mt-16 sm:-mt-24 mb-8">
                       <div className="w-32 h-32 sm:w-48 sm:h-48 bg-white p-2 rounded-2xl shadow-md flex-shrink-0">
                            <div className="w-full h-full bg-blue-100 rounded-xl flex items-center justify-center relative overflow-hidden">
                                  {/* Placeholder for actual image */}
+                                 <Image
+                                      src="/zahid.jpg"
+                                      alt="Md. Zahidul Islam Apu"
+                                      fill
+                                      priority
+                                      className="object-cover"
+                                  />
                                  <span className="text-4xl font-heading font-bold text-blue-300">Z</span>
                            </div>
                       </div>
                       <div className="flex-1 pb-4">
-                          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Zahidul Islam</h1>
+                          <h1 className="font-heading text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Md. Zahidul Islam Apu</h1>
                           <p className="text-lg text-gray-600 mb-4">Physics Instructor & Educator</p>
                           <div className="flex flex-wrap gap-4 text-sm font-medium text-gray-500">
                                <div className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> Dhaka, Bangladesh</div>
-                               <div className="flex items-center gap-1.5"><GraduationCap className="w-4 h-4" /> B.Sc in Physics, DU</div>
+                               <div className="flex items-center gap-1.5"><GraduationCap className="w-4 h-4" /> M.Sc & B.Sc in Physics, RU</div>
                           </div>
                       </div>
                       <div className="pb-4">
