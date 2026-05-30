@@ -65,9 +65,9 @@ export default function About() {
                          </h2>
                          <ul className="space-y-4">
                              {[
-                                "B.Sc (Honors) and M.Sc in Physics from University of Dhaka",
-                                "Over 5+ years of teaching experience with HSC and Admission candidates.",
-                                "Helped 1000+ students secure positions in top engineering universities.",
+                                "B.Sc (Honors) and M.Sc in Physics from University of Rajshahi",
+                                "Over 7+ years of teaching experience with HSC and Admission candidates.",
+                                "Helped 500+ students secure positions in top engineering universities.",
                                 "Author of comprehensive physics study materials and formula sheets."
                              ].map((achievement, idx) => (
                                  <li key={idx} className="flex gap-3 text-gray-600">
