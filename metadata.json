@@ -1,0 +1,6 @@
+{
+  "name": "Physics With Zahid",
+  "description": "Online Learning Management System for Physics students in Bangladesh",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

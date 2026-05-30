@@ -1,0 +1,98 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A platform user",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "instructor", "admin"] },
+        "profilePhoto": { "type": "string" },
+        "createdAt": { "type": "integer" }
+      },
+      "required": ["name", "email", "role", "createdAt"]
+    },
+    "Course": {
+      "title": "Course",
+      "description": "A course",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "price": { "type": "number" },
+        "duration": { "type": "string" },
+        "teacherId": { "type": "string" },
+        "status": { "type": "string", "enum": ["draft", "published"] },
+        "createdAt": { "type": "integer" }
+      },
+      "required": ["title", "description", "price", "status", "createdAt"]
+    },
+    "Batch": {
+      "title": "Batch",
+      "description": "A specific batch of a course",
+      "type": "object",
+      "properties": {
+        "courseId": { "type": "string" },
+        "title": { "type": "string" },
+        "startDate": { "type": "integer" },
+        "endDate": { "type": "integer" },
+        "capacity": { "type": "integer" },
+        "schedule": { "type": "string" },
+        "status": { "type": "string", "enum": ["upcoming", "active", "completed"] },
+        "createdAt": { "type": "integer" }
+      },
+      "required": ["courseId", "title", "status", "createdAt"]
+    },
+    "Enrollment": {
+      "title": "Enrollment",
+      "description": "Student enrollment in a batch",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "batchId": { "type": "string" },
+        "paymentStatus": { "type": "string", "enum": ["pending", "completed", "failed"] },
+        "enrolledAt": { "type": "integer" }
+      },
+      "required": ["studentId", "batchId", "paymentStatus", "enrolledAt"]
+    },
+    "ClassSession": {
+      "title": "ClassSession",
+      "description": "A live class session",
+      "type": "object",
+      "properties": {
+        "batchId": { "type": "string" },
+        "title": { "type": "string" },
+        "meetingLink": { "type": "string" },
+        "date": { "type": "integer" },
+        "duration": { "type": "integer" },
+        "status": { "type": "string", "enum": ["upcoming", "live", "completed"] }
+      },
+      "required": ["batchId", "title", "date", "status"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profiles"
+    },
+    "courses/{courseId}": {
+      "schema": { "$ref": "#/entities/Course" },
+      "description": "Available courses"
+    },
+    "batches/{batchId}": {
+      "schema": { "$ref": "#/entities/Batch" },
+      "description": "Batches for courses"
+    },
+    "enrollments/{enrollmentId}": {
+      "schema": { "$ref": "#/entities/Enrollment" },
+      "description": "Enrollment records"
+    },
+    "classes/{classId}": {
+      "schema": { "$ref": "#/entities/ClassSession" },
+      "description": "Live class sessions"
+    }
+  }
+}
