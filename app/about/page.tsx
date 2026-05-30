@@ -9,7 +9,7 @@ export default function About() {
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
              <div className="h-48 sm:h-64 relative overflow-hidden">
                     <Image
-                        src="/cover.jpg"
+                        src="/cover.png"
                         alt="Physics With Zahid Cover"
                         fill
                         priority
@@ -25,7 +25,7 @@ export default function About() {
                            <div className="w-full h-full bg-blue-100 rounded-xl flex items-center justify-center relative overflow-hidden">
                                  {/* Placeholder for actual image */}
                                  <Image
-                                      src="/zahid.jpg"
+                                      src="/zahid.jpeg"
                                       alt="Md. Zahidul Islam Apu"
                                       fill
                                       priority
